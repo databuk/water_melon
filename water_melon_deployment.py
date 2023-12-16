@@ -6,7 +6,7 @@ from model_architecture import build_model
 
 def load_model():
     model = build_model()
-    model.load_weights('cnn_weights_1.h5')
+    model.load_weights('model2.h5')
     return model
 model = load_model()
 st.title('WATER MELON RIPENESS DETECTION APP')
