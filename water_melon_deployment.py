@@ -6,7 +6,7 @@ from model_architecture import build_model
 
 def load_model():
     model = build_model()
-    model.load_weights('cnn_weights.h5')
+    model.load_weights('cnn_weights_1.h5')
     return model
 model = load_model()
 st.title('WATER MELON RIPENESS DETECTION APP')
@@ -14,7 +14,7 @@ uploaded_file =st.file_uploader(label = 'Upload an image..', type=['jpg', 'jpeg'
 
 def classify_image(image, model):
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
-    image = cv2.resize(image, (100, 100))
+    image = cv2.resize(image, (75, 75))
     image = image / 255.0
     image = np.expand_dims(image, axis=0)
     prediction = model.predict(image)
