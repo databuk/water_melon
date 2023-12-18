@@ -28,6 +28,6 @@ if uploaded_file is not None:
     st.image(img, channels='BGR')
     prediction = classify_image(opencv_image, model)
     if prediction[0][0] > 0.5:
-        st.write('Ripe Watermelon')
+        st.success('Ripe Watermelon')
     else:
-        st.write('Unripe Watermelon')
+        st.success('Unripe Watermelon')
